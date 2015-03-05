@@ -1,0 +1,21 @@
+<div data-role="view" data-layout="child" data-title="Your Requests" data-show="app.userView.show" data-model="app.userView.viewModel" id="userRequestsView">
+  
+<ul data-role="listview" id="userRequestsListview" data-bind="source: usersSource, click: itemClick" data-template="templateUserRequests" ></ul>
+
+<script type="text/x-kendo-template" id="templateUserRequests">
+     <div class="product">
+    <a data-role="detailbutton" data-style="detaildisclose"></a>
+      #if (Image != null){#
+     <img class="pullImage" src='#: Image.ImageUrl#' />
+      #}else{#
+       <img class="pullImage" src='images/marker.png' />
+        #}#
+    <h3>${Address} </h3>
+    <p>Range: ${Range} km</p>
+    <p>Status: ${Status}</p>
+    <p>Created: ${DateCreated}</p>
+    </script>
+</div>
+
+</div>
+

@@ -1,0 +1,109 @@
+<div data-role="view" data-layout="child" data-title="Create Listing" data-show="app.addView.init" id="createListing" data-model="app.addView.viewModel">
+	<header data-role="header">
+		<div data-role="navbar">
+			<span data-role="view-title"></span>
+			<a data-role="button" data-icon="refresh" data-click="setAddressDetails" data-align="right"></a>
+		</div>
+	</header>
+    <form id="addListview">
+	<ul data-role="listview" data-style="inset" data-type="group">
+		<li>Clasifcation
+			<ul>
+				<li>
+					<label>Rating:
+						<select id="createAssetRating" data-bind="value: createAssetRating">
+							<option value="Severe">Severe</option>
+							<option value="Medium">Medium</option>
+							<option value="Low">Low</option>
+						</select>
+					</label>
+
+				</li>
+
+				<li>
+					<label>Group:
+						<select id="createGroup" data-role="dropdownlist" data-bind="source: createGroupSource, value: GroupId,  events: {
+                            change: onChange}" data-value-field="GroupId" data-text-field="Type">
+						</select>
+					</label>
+				</li>
+            <li>
+					<label>Service:
+						<select id="createService" data-option-label="Select product"  data-auto-bind="true" data-role="dropdownlist" data-bind="source: bindServicesSource,enabled: isEnabled, value:ServiceId, events: {
+                            change: onServicesChange}" data-text-field="Type" data-value-field="ServiceId">
+						</select>
+					</label>
+				</li>
+
+			</ul>
+		</li>
+
+		<li>Description
+			<ul>
+				<li>
+					<textarea id="createAssetDescription" data-bind="value: createAssetDescription" style="width: 100%; text-wrap:normal">
+					</textarea>
+				</li>
+			</ul>
+		</li>
+
+		<li>Address
+			<ul>
+
+				<li>
+					<label>Address: <span id="fooBar"><input data-bind="value: createAssetAddress" type="text" id="createAssetAddress" value=""></span>
+					</label>
+				</li>
+				<li>
+					<label>City: <span id="fooBar"><input type="text" data-bind="value: createAssetCity"  id="createAssetCity" value=""></span>
+					</label>
+				</li>
+				<li>
+					<label>District: <span id="fooBar"><input type="text" data-bind="value: createAssetDistrict" id="createAssetDistrict" value=""></span>
+					</label>
+				</li>
+				<li>
+					<label>Lat: <span id="fooBar"><input type="text" data-bind="value: createAssetLat" id="createAssetLat" value=""></span>
+					</label>
+				</li>
+				<li>
+					<label>Lon: <span id="fooBar"><input type="text" data-bind="value: createAssetLon" id="createAssetLon" value=""></span>
+					</label>
+				</li>
+
+			</ul>
+		</li>
+	</ul>
+
+	<ul data-role="listview" id="activities-listview" data-style="inset">
+		
+			<li><a class="foo" data-role="button" data-bind="click: CreateNewRequest" data-icon="add">Create</a>
+			</li>
+        <li id="getPhotoButton" style="display:none;"><a class="foo" data-role="button" href="#inboxActions" data-rel="actionsheet" data-icon="camera">Add Image</a> </li>
+	</ul>
+    
+    <ul data-role="actionsheet" id="captureImageActionSheet" data-open="onOpen" data-popup='{"direction": "up"}'>
+        <li class="km-actionsheet-title"></li>
+        <li><a href="#" data-bind="click: capturePhoto">Camera</a></li>
+        <li><a href="#" data-bind="click: getPhoto">Library</a></li>
+
+    </ul>
+
+	<!-- image preview -->
+	<ul data-role="listview" id="imagePreviewWrapper" data-style="inset" data-type="group" style="display:none;">
+
+		<li>
+			<ul id="itemImageList">
+
+			</ul>
+		</li>
+	</ul>
+
+	<div id="itemCompleteWrapper" style="display:none;">
+		<ul data-role="listview" id="listItemFinish">
+			<li data-icon="add"><a data-role="button" data-bind="click: saveOnlinePhoto" data-icon="arrow-e">Finish</a>
+			</li>
+		</ul>
+	</div>
+</form>
+</div>

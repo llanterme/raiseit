@@ -1,0 +1,31 @@
+<div data-role="view" data-layout="child" data-title="Settings" data-show="app.settingsView.show" id="settingsView" data-model="app.settingsView.viewModel">
+    
+    
+    <ul data-role="listview" id="settingsListview" data-style="inset" data-type="group">
+        <li>
+            <ul>
+               
+                    <li>
+                        Request Range
+                        <select id="requestRange">
+                            <option value="1">1km</option>
+                            <option value="2">2km</option>
+                            <option value="3">3km</option>
+                            <option value="4">4km</option>
+                            <option value="50">50km</option>
+                        <option value="200">200km</option>
+                         <option value="2000000">All</option>
+                            
+                        </select>
+                    </li>
+
+                    </ul>
+        </li>
+        <li>
+            <ul>
+                <li><a data-role="button" data-icon="arrow-e" data-bind="click: saveSettings">Save</a></li>
+            </ul>
+        </li>
+        </li>
+    </ul>
+</div>

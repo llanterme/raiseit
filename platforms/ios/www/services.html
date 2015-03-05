@@ -1,0 +1,14 @@
+<div data-role="view" data-layout="child" data-title="Services Overview" data-show="app.servicesView.show" data-model="app.servicesView.viewModel" id="browseServicesView">
+  
+<ul data-role="listview" id="browseServicesListview" data-bind="source: servicesSource, click: itemClick" data-template="templateBrowseServices" ></ul>
+
+<script type="text/x-kendo-template" id="templateBrowseServices">
+    <a data-role="detailbutton" data-style="detaildisclose"></a>
+    <div class="groups">
+    <img src="images/lgo.jpeg" class="pullImage"/>
+    <p>${Type} (${Count}) </p>
+    </div>    </script>
+
+
+</div>
+

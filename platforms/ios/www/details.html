@@ -1,0 +1,74 @@
+<div data-role="view" data-title="Request Details" id="requestDetailsView" data-show="app.detailsView.show" data-model="app.detailsView.viewModel">
+    <header data-role="header" id="mainNavHeader">
+        <div data-role="navbar">
+            <a id="back-button" class="nav-button" data-role="button" data-align="left" href="#serviceDetailsView?fromView=detailsPage">Back</a>
+            <span data-role="view-title"></span>
+            <a data-align="right" data-role="button" data-click="openShareOptions">Share</a>
+        </div>
+	</header>
+<ul data-role="listview" data-style="inset" id="requestOverviewListview" data-type="group" data-bind="source: detailsSource" data-template="templateRequestOverview">
+	</ul>
+	<script type="text/x-kendo-template" id="templateRequestOverview">
+	<ul data-role="listview" id="overview-account" data-style="inset" data-type="group">
+    <li>Reference
+    <ul>
+    <li>${Reference}</li>
+    </ul>
+    </li>
+    <li>Group
+		<ul>
+			<li>${GroupName}</li>
+        </ul>
+		</li>
+        
+        <li>Service
+		<ul>
+        <li>${ServiceName}</li>
+        </ul>
+		</li>
+
+		<li>Address
+		<ul>
+			<li>
+			<span id="itemOverViewTitle">${Address}</span></li>
+            <li>Distance <span class="value">${Range} km</span></li>
+            <li>Created <span class="value">${DateCreated}</span></li>
+            <li>Status <span class="value">${Status}</span></li>
+			
+		</ul>
+		</li>
+		<li>Description
+		<ul>
+        <li><span id="itemOverViewDescription">#: Description # </span></li>
+		</ul>
+		</li>
+        #if (Image != null){#
+
+		<li>Image
+         		<ul>
+        <li id="itemOverViewImages"><img src='#: Image.ImageUrl#'/></li>
+		</ul>
+		</li>
+        #}#
+
+	</ul>
+
+        </script>
+    <div data-role="footer">
+        <div data-role="tabstrip" id="badges-tabs">
+            <a href="#assetView" data-icon="globe">AroundMe</a>
+            <a href="add.html" data-icon="compose">Submit</a>
+            <a href="user.html" data-icon="contacts">My Issues</a>
+            <a href="settings.html" data-icon="settings">Settings</a>
+            <a href="about.html" data-icon="info">About</a>
+        </div>
+	</div>
+    
+    <ul data-role="actionsheet" id="shareOptionsActionSheet" data-popup='{"direction": "up"}'>
+        <li class="km-actionsheet-title"></li>
+        <li><a href="#" data-action="socialsharingFacebook">Facebook</a></li>
+        <li><a href="#" data-action="socialsharingTwitter">Twitter</a></li>
+        
+    </ul>
+</div>
+

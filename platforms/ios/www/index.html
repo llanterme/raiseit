@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script type="text/javascript" src="cordova.js"></script>
+    <script data-main="scripts/main" src="scripts/require.js"></script>
+
+
+    <!-- styles -->
+    <link href="kendo/styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="kendo/styles/kendo.mobile.all.min.css" rel="stylesheet" />
+    <link href="css/custom.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+    <!-- Main Layout Page -->
+    <div data-role="layout" data-id="child" class="welcome-scrn form-view">
+        <header data-role="header" id="mainNavHeader">
+            <div align="middle">
+                <img id="corp-logo" src="images/logo_Main.png" align="middle" style="width: 180px; height: 80px; margin-top: .3em" />
+
+            </div>
+            <div data-role="navbar">
+
+            </div>
+        </header>
+        <div data-role="footer">
+            <div data-role="tabstrip" id="badges-tabs">
+                <a href="#assetView" data-icon="globe">AroundMe</a>
+                <a href="add.html" data-icon="compose">Submit</a>
+                <a href="user.html" data-icon="contacts">My Issues</a>
+
+                <a href="settings.html" data-icon="settings">Settings</a>
+                <a href="about.html" data-icon="info">About</a>
+            </div>
+        </div>
+    </div>
+		
+		
+		<!-- groups View -->
+			 <div data-role="view" data-layout="child" data-title="Home" id="assetView" data-model="app.homeView.viewModel"  data-init="app.homeView.refresh">
+					 
+					 	<ul data-role="listview" id="assetListView" data-bind="source: groupsSource, click: itemClick" data-template="templateAsset">
+					 	</ul>
+					     <script type="text/x-kendo-template" id="templateAsset">
+					         <a data-role="detailbutton" data-style="detaildisclose"></a>
+					         <div class="groups">
+					         <img src="images/Logo_Circle.png" class="pullImage"/>
+					         <p>#:Type# (#:Count#) </p>
+					         </div>
+					         </script>
+			
+					
+			 </div>
+			 
+	 		
+      
+    </body>
+</html>
